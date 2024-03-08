@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMASIVU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="logo.jpg" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p> Esedu student</p>
+            <h1>Sup, I'm <span>Mou</span><br>from Finland</h1>
+        </div>
+    </div>
+</div>
+<!-- ---------about--------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="toji2.0.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Mohammed aka Mou, I'm from a small city called Mikkeli.
+                    I'm a Software Devoloper junior student in Esedu vocational collage.
+                    I go to the gym 4 times a week i train martial arts, play video games, watch TV-shows and anime on my free times or i draw.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">fav band/musicion</p>
+                    <p class="tab-links" onclick="opentab('experince')">skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Fav band</span><br>Men i trust</li>
+                        <li><span>Rapper</span><br>The goat Pop smoke</li>
+                        <li><span>Singer</span><br>The weekend</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experince">
+                    <ul>
+                        <li><span>Cooding</span><br>I know computer language and can make websites and stuff</li>
+                        <li><span>Languages</span><br>I can speak English, Finnish and spanish</li>
+                        <li><span>Martial arts esperience</span><br>I've trained Judo, Bjj(don't remember shit), Boxinig(Was boring asf) and kickboxing</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022 - current</span><br>Software Devoloper student</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------hobbies----------------------->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Hobbies</h1>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-heart"></i>
+                <h2>Watch anime</h2>
+                <p>as i mentioned i watch anime here is my top 3: One Piece, JOJO, Baki</p>
+                 
+            </div>
+
+            <div>
+                <i class="fas fa-tv"></i>
+                <h2>Watch TV-Shows</h2>
+                <p>Here is my fav tv-shows of all time: friends, himym, adventure time</p>
+            </div>
+
+            <div>
+                <i class="fas fa-gamepad"></i>
+                <h2>Play Video Games</h2>
+                <p>I've played 20+ video games but my top 3 favs are: Cyberpunk, Elden ring <i class="fas fa-trophy"></i> and Control <i class="fas fa-trophy"></i></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------Contact-------------------- --->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> contact@example.com</p>
+                <p><i class="fas fa-phone"></i> 094576349</p>
+                <div class="social-icons">
+                    <a href="https://www.snapchat.com/add/safdari860?share_id=1Usk_VTPQP6q2T09fdtomw&locale=en_Fi /"><i class="fab fa-snapchat"></i></a> 
+                    <a href="https://www.instagram.com/_s_omeone_12/"><i class="fab fa-instagram"></i></a> 
+                </div>
+               <!------ <a href="" download class="btn btn2">Download CV</a> ----->
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submmit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname) {
+    var selectedTab = document.getElementById(tabname);
+    var isActive = selectedTab.classList.contains("active-tab");
+
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active-link");
+    }
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].classList.remove("active-tab");
+    }
+
+    if (isActive) {
+        selectedTab.classList.remove("active-tab");
+    } else {
+        selectedTab.classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+}
+
+
+
+</script>
+
+
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+    
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+    
+
+</script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
